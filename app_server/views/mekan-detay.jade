@@ -1,0 +1,75 @@
+extends layout
+block content
+  .row.page-header
+    .col-lg-12
+      //Mekanın adı
+      h1 Starbucks
+  .row
+    //Responsive yap
+    .col-xs-12.col-md-9
+      .row
+        .col-xs-12.col-sm-6
+          //Yıldızları ekle
+          p.rating
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star
+            span.glyphicon.glyphicon-star-empty
+            span.glyphicon.glyphicon-star-empty
+          //Mekanın adresi
+          p Centrum Garden AVM
+          .panel.panel-primary
+            .panel-heading
+              h2.panel-title Açılış Saatleri
+            .panel-body
+                p Pazartesi - Cuma : 7:00-23:00
+                p Cumartesi : 9:00-20:00
+          .panel.panel-primary
+            .panel-heading
+              h2.panel-title Neler Var
+            .panel-body
+                span.label.label-warning
+                  span.glyphicon.glyphicon-ok
+                  | &nbsp;Dünya Kahveleri
+                | &nbsp;
+                span.label.label-warning
+                  span.glyphicon.glyphicon-ok
+                  | &nbsp;Atıştırmalık
+                | &nbsp; 
+                span.label.label-warning
+                  span.glyphicon.glyphicon-ok
+                  | &nbsp;Ücretsiz İnternet
+                | &nbsp;               
+              //Haritayı ekleme işlemi
+        .col-xs-12.col-sm-6.location-map
+          .panel.panel-primary
+            .panel-heading
+              h2.panel-title Konum Bilgisi
+            .panel-body
+              //Harita eklemek için Google'dan API anahtarı almanız gerekiyor. key kısmından sonra yer alan kısım API KEY.
+              img.img-responsive.img-rounded(src='http://maps.googleapis.com/maps/api/staticmap?center=37.781885,30.566034&zoom=12&size=400x400&markers=37.781885,30.566034&key=AIzaSyDiGNr9ZKPoqok7vv-f5-qVzF6Ootef7ts')
+      .row
+        .col-xs-12
+          .panel.panel-primary.review-panel
+            .panel-heading
+              //Yorum ekle düğmesini ekle
+              a.btn.btn-default.pull-right(href='/mekan/yorum/yeni') Yorum Ekle
+              h2.panel-title Müşteri Yorumları
+            .panel-body.review-container
+                .row
+                 .review
+                  .well.well-sm.review-header
+                    span.rating
+                      span.glyphicon.glyphicon-star
+                      span.glyphicon.glyphicon-star
+                      span.glyphicon.glyphicon-star
+                      span.glyphicon.glyphicon-star-empty
+                      span.glyphicon.glyphicon-star-empty 
+                    span.reviewAuthor Asım Sinan Yüksel
+                    small.reviewTimestamp  17 Ekim 2016
+                  .col-xs-12
+                    p Moşa içmeden duramıyorum.
+              .row
+                //Yan tarafta responsive görünümde açıklama ekleme işleme
+    .col-xs-12.col-md-3
+      p.lead Starbucks WiFi Buddy'de yer alıyor. Ücretsiz WiFi imkanı sunuyor. Kablosuz İnternet Şifresi:12345678
